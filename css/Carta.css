@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf');
+}
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    color: var(--color-blanco);
+}
+:root{  
+    --color-negro: #121212;
+    --color-negro-claro: #1B1B1B;
+    --color-blanco: #f6f6f6;
+    --color-rosa: #ff66c4;
+    --color-carmesi: #d90037;
+    --color-gris:#303030;
+    --color-footer-gris: #6e6e6e;
+}
+/* Tipografia Responsive MOVIL */
+main h1{font-size: 1.3rem;}
+main h2{font-size: 1.1rem;}
+main p{font-size: 0.9rem;}
+
+main p,h2,h3{
+    padding: 5px 0;
+}
+.section_Cocteles div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 0 0;
+}
+.section_Cocteles div:first-child h1 { /*Carta de Cócteles & Bebidas*/
+    border-bottom: 3px solid var(--color-carmesi); 
+}
+.introduccion_Coctel{ /* ======== H2 y párrafo debajo a la izquierda ======== */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 10%;
+} 
+.introduccion_Coctel h2, h3{
+     color: var(--color-rosa);
+}
+.articles_cocteles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    gap: 50px;
+}
+.articles_cocteles article { /* ======== ARTÍCULOS ======== */
+    background-color: var(--color-negro-claro);
+    padding: 20px;
+    border: 2px solid var(--color-gris);
+    border-radius: 2px;
+    width: 250px;
+}
+.section_Cocteles article img {
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid var(--color-negro);
+}
+.articles_cocteles article div { /* ======== ARTÍCULOS ======== */
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.precio{
+    width: 95%;
+    text-align: right;
+    font-size: 1rem;
+}
+@media (min-width: 768px){ /* Version TABLET */
+
+    main h1{ font-size: 1.5rem;} /* Tipografia Responsive TABLET */
+    main h2{font-size: 1.1rem;}
+    main header{font-size: 1rem;}
+    main p{font-size: 0.9rem;}
+
+    .section_Cocteles article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px; /*Este gap separa la foto y la descripcion*/
+        width: 450px;
+    }
+    .section_Cocteles article div{
+        width: 450px;
+    }
+    .precio{
+        width: 100%;
+        font-size: 1.3rem;
+        margin-top: 90px;
+    }
+}
+@media (min-width: 992px){ /* Version PC */
+
+    main h1{font-size: 1.8rem;}     /* Tipografia Responsive PC */
+    main h2{font-size: 1.3rem;}
+    main header{font-size: 1.1rem;}
+    main p{font-size: 1rem;}
+    
+    .articles_cocteles{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;        /* margin: 0 100px; */
+        align-items: center;
+    }
+}
+
+@media (min-width: 1450px){ /* Version PC */
+        .articles_cocteles{
+        margin: 30px 10%;
+        }
+        .articles_cocteles article{
+        /* margin: 0 1%; */
+        }
+
+}

@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf');
+}
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+:root{  
+    --color-negro: #121212;
+    --color-negro-claro: #1B1B1B;
+    --color-blanco: #f6f6f6;
+    --color-rosa: #ff66c4;
+    --color-carmesi: #d90037;
+    --color-gris:#303030;
+    --color-footer-gris: #5a5a5a;
+}
+body{
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+.header-bar{ /* ======HEADER========*/
+    position: fixed;
+    top: 10px; left: 2%; width: 95%;     
+
+    background: rgba(17, 17, 17, 0.89); 
+    border: 2px solid rgba(78, 77, 77, 0.35);
+    border-radius: 60px;
+    padding: 0px 20px;
+    z-index: 1000;  
+}
+.header-bar nav{
+    display: none;
+    background-color: var(--color-negro);
+}
+.header-bar nav.show{                               
+    display: block;                                 /* Mostrar el menú */
+    position: fixed; 
+    inset: 0;                                       /*tapa todo sin errores */
+    background-color: var(--color-negro-claro);
+}
+.header-bar li{
+    text-align: center;
+    list-style: none;
+    margin: 20px 0; padding: 20px 30px;         /*El padding en PC afecta por si se quiere modificar*/
+    border-bottom: solid  5px var(--color-negro);
+    background-color: var(--color-gris); 
+} 
+.header-bar li:hover {
+    background-color: var(--color-negro); 
+    cursor: pointer;
+    border-bottom: solid  5px var(--color-carmesi);
+}
+.header-bar ul{
+    position: absolute;
+    top: 120px; left: 10%;
+    width: 80%;
+}
+.header-bar a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: bold;
+}
+#btn-menu, #btn-close{                          /*Botones del menu*/
+    position: absolute;
+        width: 25px;
+        top: 32%; right: 0;
+        margin-right: 40px;
+        cursor:pointer;
+}
+#btn-close {                                    /*Para que no aparezca en un inicio*/
+    display: none;
+}
+#nav-menu.show ~ #btn-close {                  /* Mostrar el botón cerrar solo cuando el menú está visible */
+    display: block;
+}
+img[alt="logoXiringuita"]{
+    max-width: 100px;
+}
+img[alt="AquiSeVive"]{
+    position: absolute;
+    width: 80%; top: 40%; left: 50%;
+    max-width: 900px;                           /*Adapta hata pc*/
+    transform: translateX(-50%);
+}
+.seccion-video {
+    height:100vh; 
+}
+.seccion-video video {
+    height: 100%; width: 100%; 
+    object-fit: cover;                         /* Hace que el video cubra el contenedor sin distorsionarse */
+}
+footer {                                            /*====APARTIR DE AQUI FOOTER====*/
+    background-color: var(--color-negro-claro);
+    padding: 0px 0 10px 0;
+    text-align: center; /* centro los elementos en línea: logo y redes */
+}
+footer p{
+    padding: 5px; font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+}
+footer span{
+    color: var(--color-rosa);
+}
+.redes_sociales, .datos_footer{
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;  
+    display: block;
+}
+.redes_sociales > div:nth-child(1) img {
+    width: 70%; margin-top:90px;   margin-bottom: 20px;
+}
+.redes_sociales > address:nth-child(2) > a > img{ 
+    width: 10%; margin: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.redes_sociales > address:nth-child(2) { /*Esto funciona para elimnar el texto que se le crea a las imagenes al estar dentro de un enlace a*/
+    font-size: 0; 
+} 
+.redes_sociales address >  a:nth-child(1) > img:hover{
+    content: url('../assets/Imágenes/simbolos/logoInstagramHover.png');  transform: scale(1.3);
+}
+.redes_sociales address >  a:nth-child(2) > img:hover{
+    content: url('../assets/Imágenes/simbolos/logoSpotifyHover.png');  transform: scale(1.3);
+}
+.redes_sociales address > a:nth-child(3) > img:hover{
+    content: url('../assets/Imágenes/simbolos/logoTwitterHover.png');  transform: scale(1.3);
+}
+.redes_sociales address >  a:nth-child(4) > img:hover{
+    content: url('../assets/Imágenes/simbolos/logoTikTokHover.png');  transform: scale(1.3);
+}
+.datos_footer > address {
+    padding: 10px 0;
+}
+/* Titulos */
+.datos_footer h3{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-rosa);
+    padding: 5px;
+}
+footer > p:nth-of-type(1), footer > p:nth-of-type(2) { /* Copyright centrado */
+    width: 80%;
+    margin: 15px auto;      
+    color: var(--color-footer-gris);
+}
+footer hr {
+    width: 90%;          
+    margin: 0 auto;      
+    border: 1px solid var(--color-footer-gris); 
+}
+footer span:hover{
+    color: var(--color-carmesi);
+    cursor: pointer; transform: scale(1.1);
+}
+@media (min-width: 768px){ /* Version TABLET */
+    .redes_sociales,
+    .datos_footer{
+        display: inline-block;     /* bloque lateral */
+        vertical-align: top;
+        margin: 50px 5%;              /* espacio lateral simula space-around */
+    }
+    .redes_sociales{
+        margin: 100px 5%;              /* espacio lateral simula space-around */
+    }
+    .datos_footer > address{
+        text-align: left;
+    } 
+}
+@media (min-width: 992px){ /* Version PC */
+    img[alt="logoXiringuita"]{
+        max-width: 120px;
+    }
+    .header-bar nav{                        
+        display: inline-block; /*Antes tenia none, tiene que apareces*/
+    }
+    .header-bar ul{
+        top: 0%; left:0%;
+        text-align: center;
+        width: 100%;
+    }
+    .header-bar li{
+        display: inline-block;              /*Pone el nav en una fila eliminando en columna*/
+        border: none;   
+        background: none;
+        padding: 10px 30px;
+    }
+    .header-bar li:hover {
+        background-color: rgba(255, 255, 255, 0); 
+        border: none;
+    } 
+    .header-bar a{
+        display: inline-block;
+        transition: transform 0.3s ease, color 0s ease;
+    }
+    .header-bar a:hover{
+        color: var(--color-carmesi);
+        transform: scale(1.2);
+    } 
+    #btn-menu{     /* Ocultar botones */
+        display: none;
+    }
+    .redes_sociales,
+    .datos_footer {
+        margin: 50px 7%;              /* espacio lateral simula space-around */
+    }
+    .redes_sociales{
+        margin: 100px 7%;              /* espacio lateral simula space-around */
+    }
+    .redes_sociales> div:nth-child(1) img {
+        width: 300px;  margin-top:20%;
+        }
+}
+
