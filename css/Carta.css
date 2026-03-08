@@ -17,75 +17,75 @@
     --color-gris:#303030;
     --color-footer-gris: #6e6e6e;
 }
-/* Tipografia Responsive MOVIL */
-main h1{font-size: 1.3rem;}
+main h1{font-size: 1.3rem;}         /* Tipografia Responsive MOVIL */
 main h2{font-size: 1.1rem;}
 main p{font-size: 0.9rem;}
-
-main p,h2,h3{
+main p,h2,h3{                       /*Espacio entre parrafos*/
     padding: 5px 0;
 }
-.section_Cocteles div:first-child{
+.seccion_Cocteles div:first-child{ /*Contenedor del H1 para que quede centrado*/
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 0 0 0;
 }
-.section_Cocteles div:first-child h1 { /*Carta de Cócteles & Bebidas*/
+.seccion_Cocteles div:first-child h1 { /* Linea roja Carta de Cócteles & Bebidas*/
     border-bottom: 3px solid var(--color-carmesi); 
 }
-.introduccion_producto{ /* ======== H2 y párrafo debajo a la izquierda ======== */
+.introduccion_producto{ /* Todos los h2 y descripcion de los apartados */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
     padding: 30px 10%;
 } 
-.introduccion_producto h2, h3{
+.introduccion_producto h2, h3{  /*titulos en rosa */
      color: var(--color-rosa);
 }
-.articles_cocteles{
+.lista_cocteles{ /*===== SECTION COCTELES ===== */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  
     margin: 30px 0;
     gap: 50px;
 }
-.articles_cocteles article, .articles_chupitos article { /* ======== ARTÍCULOS ======== */
-    background-color: var(--color-negro-claro);
-    padding: 20px;
-    border: 2px solid var(--color-gris);
-    border-radius: 2px;
-    width: 250px;
-}
-
-.section_Cocteles article img {
-    width: 200px;
-    border-radius: 5px;
-    border: 2px solid var(--color-negro);
-}
-.articles_cocteles article div { 
+.lista_cocteles article, .lista_chupitos article { /*Diseño recuadros articles*/
     display: flex;
     flex-direction: column;
-    width: 200px;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--color-negro-claro);
+    border: 2px solid var(--color-gris);
+    border-radius: 2px;
+    width: 250px;      /*width y paddding cambian el tamaño del cuadrado*/
+    padding: 20px; 
 }
+.lista_cocteles article img { /*Tamaño imagen + borde*/
+    width: 200px;
+    border-radius: 5px;
+    border: 3px solid var(--color-negro);
+}
+.lista_cocteles article div {   /*El texto de la imagen quede centrado y ocupe todo el ancho*/
+    /* display: flex;
+    flex-direction: column; */
+    width: 200px;
+}/*IMPORTANTE: Tengo problemas con p que es la descripcion, manejo mucho el valor width*/
 .precio{
-    width: 95%;
+    /* width: 96%; */
     text-align: right;
     font-size: 1rem;
 }
-
-
-.articles_chupitos{
+.lista_chupitos{ /*SIGUIENTE APARTADO CHUPITOS*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 30px 0;
+    margin: 30px 14%;
     gap: 50px;
 }
-.articles_chupitos article {
-        width: 250px;
+
+.lista_chupitos article {
+        width: 150px;
+        padding: 10px;
 }
 
 @media (min-width: 768px){ /* Version TABLET */
@@ -93,23 +93,33 @@ main p,h2,h3{
     main h2{font-size: 1.1rem;}
     main header{font-size: 1rem;}
     main p{font-size: 0.9rem;}
-    body{
+    /* body{
         background-color: rgb(73, 11, 11);
-    }
-    .section_Cocteles article {
+    } */
+    .lista_cocteles article {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 20px; /*Este gap separa la foto y la descripcion*/
         width: 450px;
     }
-    .section_Cocteles article div{
+    .lista_cocteles article div{
         width: 450px;
     }
-    .articles_cocteles article div > .precio{
+    .lista_cocteles article div > .precio{
         width: 100%;
         font-size: 1.3rem;
         margin-top: 90px;
+    }
+    
+    .lista_chupitos{ /*SIGUIENTE APARTADO CHUPITOS*/
+        margin: 30px 0;
+        gap: 10px;
+    }
+
+    .lista_chupitos article {
+            width: 160px;
+            padding: 10px;
     }
 }
 @media (min-width: 992px){ /* Version PC */
@@ -117,23 +127,27 @@ main p,h2,h3{
     main h2{font-size: 1.3rem;}
     main header{font-size: 1.1rem;}
     main p{font-size: 1rem;}
-        body{
+        /* body{
         background-color: rgb(30, 11, 73);
-    }
-    .articles_cocteles{
+    } */
+    .lista_cocteles{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;        /* margin: 0 100px; */
         align-items: center;
     }
+    .lista_cocteles {
+        margin: 0 12%; /*Añadir margen lateral a los articulos aumenta el espacio */
+    }
+    .lista_chupitos{ /*SIGUIENTE APARTADO CHUPITOS*/
+        gap: 50px;
+    }
+    .lista_chupitos article {
+        margin: 0 10px;
+            width: 350px;
+            padding: 10px;
+    }
 }
 
-@media (min-width: 1450px){ /* Version PC */
-        .articles_cocteles{
-        margin: 30px 10%;
-        }
-        .articles_cocteles article{
-        /* margin: 0 1%; */
-        }
 
-}
+
