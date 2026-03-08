@@ -47,7 +47,7 @@ main p,h2,h3{                       /*Espacio entre parrafos*/
     margin: 30px 0;
     gap: 50px;
 }
-.lista_cocteles article, .lista_chupitos article { /*Diseño recuadros articles*/
+.lista_cocteles article{ /*Diseño recuadros articles*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,12 +65,9 @@ main p,h2,h3{                       /*Espacio entre parrafos*/
     border: 3px solid var(--color-negro);
 }
 .lista_cocteles article div {   /*El texto de la imagen quede centrado y ocupe todo el ancho*/
-    /* display: flex;
-    flex-direction: column; */
-    width: 200px;
-}/*IMPORTANTE: Tengo problemas con p que es la descripcion, manejo mucho el valor width*/
-.precio{
-    /* width: 96%; */
+    width: 100%;
+}
+.precio{ 
     text-align: right;
     font-size: 1rem;
 }
@@ -78,74 +75,53 @@ main p,h2,h3{                       /*Espacio entre parrafos*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px 14%;
-    gap: 50px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 20px;
+    margin: 50px 0;
 }
-
 .lista_chupitos article {
-        width: 150px;
-        padding: 10px;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /*Logre que el titulo quede arriba y el precio abajo del*/
+    align-items: left;
 
+    background-color: var(--color-negro-claro);
+    border: 2px solid var(--color-gris);
+    border-radius: 2px;
+    width: 300px;      /*width y paddding cambian el tamaño del cuadrado*/
+    padding: 10px;
+}
 @media (min-width: 768px){ /* Version TABLET */
     main h1{ font-size: 1.5rem;} /* Tipografia Responsive TABLET */
-    main h2{font-size: 1.1rem;}
-    main header{font-size: 1rem;}
+    main h2{font-size: 1.3rem;}
     main p{font-size: 0.9rem;}
-    /* body{
-        background-color: rgb(73, 11, 11);
-    } */
-    .lista_cocteles article {
-        display: flex;
+ 
+    .lista_cocteles article{
         flex-direction: row;
-        align-items: center;
-        gap: 20px; /*Este gap separa la foto y la descripcion*/
-        width: 450px;
-    }
-    .lista_cocteles article div{
-        width: 450px;
+        /*align-items: flex-end;  Subo el texto a la par de la imagen*/
+        gap: 20px;       /*Este gap separa la foto y la descripcion*/
+        width: 450px;    /*Tamaño del article*/
     }
     .lista_cocteles article div > .precio{
-        width: 100%;
         font-size: 1.3rem;
-        margin-top: 90px;
+        margin-top: 180px; /*Hace que el precio se vea abajo siento que es una chapuza*/
     }
-    
-    .lista_chupitos{ /*SIGUIENTE APARTADO CHUPITOS*/
-        margin: 30px 0;
-        gap: 10px;
-    }
-
-    .lista_chupitos article {
-            width: 160px;
-            padding: 10px;
-    }
+    .lista_chupitos article{
+        width: 20%;   
+    } 
 }
 @media (min-width: 992px){ /* Version PC */
     main h1{font-size: 1.8rem;}     /* Tipografia Responsive PC */
     main h2{font-size: 1.3rem;}
-    main header{font-size: 1.1rem;}
     main p{font-size: 1rem;}
-        /* body{
-        background-color: rgb(30, 11, 73);
-    } */
+
     .lista_cocteles{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;        /* margin: 0 100px; */
-        align-items: center;
-    }
-    .lista_cocteles {
-        margin: 0 12%; /*Añadir margen lateral a los articulos aumenta el espacio */
-    }
-    .lista_chupitos{ /*SIGUIENTE APARTADO CHUPITOS*/
-        gap: 50px;
-    }
-    .lista_chupitos article {
-        margin: 0 10px;
-            width: 350px;
-            padding: 10px;
+        margin: 0 12%;         /*Añadir margen lateral a los articulos aumenta el espacio */
+        align-items: stretch;  /*Hace que el contenedor sea del mismo tamaño aunque la descripcion sea mayor*/
     }
 }
 
