@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("show");
     }
   }
-
   window.addEventListener("resize", checkScreenSize);
 
 });
