@@ -113,7 +113,7 @@ main p,h2,h3{                       /*Espacio entre parrafos*/
 }
 @media (min-width: 992px){ /* Version PC */
     main h1{font-size: 1.8rem;}     /* Tipografia Responsive PC */
-    main h2{font-size: 1.3rem;}
+    main h2{font-size: 1.5rem;}
     main p{font-size: 1rem;}
 
     .lista_cocteles{

@@ -99,7 +99,7 @@ footer {                                            /*====APARTIR DE AQUI FOOTER
     text-align: center; /* centro los elementos en línea: logo y redes */
 }
 footer p{
-    padding: 5px; font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    padding: 5px; font-size: clamp(0.8rem, 1.5vw, 0.9rem); font-style: normal;
 }
 footer span{
     color: var(--color-rosa);
