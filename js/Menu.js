@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.remove("show");
   });
 
-  // 🔥 Cerrar automáticamente al pasar a PC
+  // Cerrar automáticamente al pasar a PC
   function checkScreenSize() {
     if (window.innerWidth >= 992) {
       navMenu.classList.remove("show");
